@@ -1,0 +1,340 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://unpkg.com/three@0.137.4/build/three.min.js"></script>
+    <script src="https://unpkg.com/three@0.137.4/examples/js/controls/OrbitControls.js"></script>
+  </head>
+<body>
+ <script>
+      // ページの読み込みを待つ
+      window.addEventListener('DOMContentLoaded', init);
+
+      function init() {
+        // サイズを指定
+        const width = 800
+        const height = 600;
+
+        // レンダラーを作成
+        var renderer = new THREE.WebGLRenderer();
+        document.body.appendChild(renderer.domElement);
+        renderer.setSize(width, height);
+
+        // シーンを作成
+        const scene = new THREE.Scene();
+
+        // カメラを作成
+        const camera = new THREE.PerspectiveCamera(45, width / height);
+        // カメラの初期座標を設定
+        camera.position.set(1, 2, -5); //位置を指定
+        camera.lookAt(0, 0, 0); //見つめる方向
+
+        let rot = 0; // 角度
+        let mouseX = 0; // マウス座標
+          
+        // マウス座標はマウスが動いた時のみ取得できる
+        document.addEventListener("mousemove", (event) => {
+          mouseX = event.pageX;
+        });
+        
+        tick();
+        
+        // 毎フレーム時に実行されるループイベントです
+        function tick() {
+          // マウスの位置に応じて角度を設定
+          // マウスのX座標がステージの幅の何%の位置にあるか調べてそれを360度で乗算する
+          const targetRot = (mouseX / window.innerWidth) * 360;
+          // イージングの公式を用いて滑らかにする
+          // 値 += (目標値 - 現在の値) * 減速値
+          rot += (targetRot - rot) * 0.02;
+        
+          // ラジアンに変換する
+          const radian = rot * Math.PI / 180;
+          // 角度に応じてカメラの位置を設定
+          camera.position.x = 2 * Math.sin(radian);
+          camera.position.z = -4 * Math.cos(radian);
+          // 原点方向を見つめる
+          camera.lookAt(new THREE.Vector3(0, 0, 0));
+        
+          // レンダリング
+          renderer.render(scene, camera);
+        
+          requestAnimationFrame(tick);
+        }
+        
+        // 環境光源を作成
+        const light = new THREE.AmbientLight(0xffffff, 1.0);
+        light.position.set(0, 0, 10);
+        scene.add(light);
+        // 平行光源1
+        var directionalLight1 = new THREE.DirectionalLight(0xffffff);
+        directionalLight1.position.set(10, 10, 10);
+        scene.add(directionalLight1);
+        // 平行光源2
+        var directionalLight2 = new THREE.DirectionalLight(0x888888);
+        directionalLight2.position.set(-10, -10, 10);
+        scene.add(directionalLight2);
+        // 平行光源3
+        var directionalLight3 = new THREE.DirectionalLight(0xfffffff);
+        directionalLight3.position.set(-5, 5, 10);
+        scene.add(directionalLight3);
+        // 平行光源4
+        var directionalLight4 = new THREE.DirectionalLight(0xfffffff);
+        directionalLight4.position.set(0, 5, 10);
+        scene.add(directionalLight4);
+        // 平行光源5
+        var directionalLight5 = new THREE.DirectionalLight(0xfffffff);
+        directionalLight5.position.set(0, 5, -10);
+        scene.add(directionalLight5);
+        // 点光源6
+        const light6 = new THREE.PointLight(0xFFFFFF, 2, 10, 1.0);
+        light6.position.set(0, 5, 0)
+        scene.add(light6);
+
+
+        // helper
+        //const gridHelper = new THREE.GridHelper(2,10); // size, step
+        //scene.add(gridHelper);
+        //const axisHelper = new THREE.AxisHelper(2); //軸の長さ　X：赤、Y：緑、z：青
+        //scene.add(axisHelper);
+        
+        // 基礎を作成
+        var geometry = new THREE.CylinderGeometry(1.2, 1.2, 0.05, 64);
+        //var material = new THREE.MeshPhongMaterial({ color: 0xdab300,metalness:1,roughness: 0.2 });
+        var material = new THREE.MeshStandardMaterial({ color: 0xdab300,metalness:1,roughness: 0.2 });
+        var cylinder = new THREE.Mesh(geometry, material);
+        cylinder.position.set(0,0,0); //位置を指定
+        //cylinder.rotation.set(0,30,0);
+        scene.add(cylinder);   // シーンに追加
+
+        // 縁を作成
+        const geometryR = new THREE.TorusGeometry( 1.1, 0.1, 6, 128 ); 
+        //var materialR = new THREE.MeshPhongMaterial({ color: 0xdab300,metalness:1,roughness: 0.2 });
+        var materialR = new THREE.MeshStandardMaterial({ color: 0xdab300,metalness:1,roughness: 0.2 });
+        var torusR = new THREE.Mesh(geometryR, materialR);
+        torusR.position.set(0,0,0); //位置を指定
+        torusR.rotation.set(Math.PI/2,0,0);
+        scene.add(torusR);   // シーンに追加
+
+        // 縁装飾1を作成
+        const geometryRO1 = new THREE.TorusGeometry( 1.55, 0.03, 4, 128); 
+        //var materialRO1 = new THREE.MeshPhongMaterial({ color: 0xdab300,metalness:1,roughness: 0.2 });
+        var materialRO1 = new THREE.MeshStandardMaterial({ color: 0xdab300,metalness:1,roughness: 0.2 });
+        var torusRO1 = new THREE.Mesh(geometryRO1, materialRO1);
+        torusRO1.position.set(0,0,0); //位置を指定
+        torusRO1.rotation.set(0,0,0);
+        scene.add(torusRO1);   // シーンに追加
+
+        // 縁装飾2を作成
+        const geometryRO2 = new THREE.TorusGeometry( 1.61, 0.03, 4, 128); 
+        //var materialRO2 = new THREE.MeshPhongMaterial({ color: 0xdab300,metalness:1,roughness: 0.2 });
+        var materialRO2 = new THREE.MeshStandardMaterial({ color: 0xdab300,metalness:1,roughness: 0.2 });
+        var torusRO2 = new THREE.Mesh(geometryRO2, materialRO2);
+        torusRO2.position.set(0,0,0); //位置を指定
+        torusRO2.rotation.set(0,0,0);
+        scene.add(torusRO2);   // シーンに追加
+        
+        // ボタン先端を作成
+        var geometryB1 = new THREE.CylinderGeometry(0.14, 0.14, 0.1, 64);
+        //var materialB1 = new THREE.MeshPhongMaterial({ color: 0xdab300,metalness:1,roughness: 0.2 });
+        var materialB1 = new THREE.MeshStandardMaterial({ color: 0xdab300,metalness:1,roughness: 0.2 });
+        var cylinderB1 = new THREE.Mesh(geometryB1, materialB1);
+        cylinderB1.position.set(0,0,1.4); //位置を指定
+        cylinderB1.rotation.set(Math.PI/2,0,0);
+        scene.add(cylinderB1);   // シーンに追加
+
+        // ボタン基部を作成
+        var geometryB2 = new THREE.CylinderGeometry(0.08, 0.08, 0.3, 64);
+        //var materialB2 = new THREE.MeshPhongMaterial({ color: 0xdab300,metalness:1,roughness: 0.2 });
+        var materialB2 = new THREE.MeshStandardMaterial({ color: 0xdab300,metalness:1,roughness: 0.2 });
+        var cylinderB2 = new THREE.Mesh(geometryB2, materialB2);
+        cylinderB2.position.set(0,0,1.3); //位置を指定
+        cylinderB2.rotation.set(Math.PI/2,0,0);
+        scene.add(cylinderB2);   // シーンに追加
+
+        // 蓋の基礎を作成
+        var geometryC = new THREE.CylinderGeometry(1.2, 1.2, 0.05, 64);
+        //var materialC = new THREE.MeshPhongMaterial({ color: 0xdab300,metalness:1,roughness: 0.2 });
+        var materialC = new THREE.MeshStandardMaterial({ color: 0xdab300,metalness:1,roughness: 0.2 });
+        var cylinderC = new THREE.Mesh(geometryC, materialC);
+        cylinderC.position.set(0,-1.2,-1.2); //位置を指定
+        cylinderC.rotation.set(Math.PI/2,0,0);
+        scene.add(cylinderC);   // シーンに追加
+
+        // 蓋の縁を作成
+        const geometryRC = new THREE.TorusGeometry( 1.1, 0.1, 6, 128 ); 
+        //var materialRC = new THREE.MeshPhongMaterial({ color: 0xdab300,metalness:1,roughness: 0.2 });
+        var materialRC = new THREE.MeshStandardMaterial({ color: 0xdab300,metalness:1,roughness: 0.2 });
+        var torusRC = new THREE.Mesh(geometryRC, materialRC);
+        torusRC.position.set(0,-1.2,-1.2); //位置を指定
+        torusRC.rotation.set(0,0,0);
+        scene.add(torusRC);   // シーンに追加
+        
+        // 文字盤を作成
+        var geometryN = new THREE.CylinderGeometry(1, 1, 0.001, 64);
+        //var materialN = new THREE.MeshPhongMaterial({ color: 0xffffff,metalness:1,roughness: 0.2 });
+        var materialN = new THREE.MeshStandardMaterial({ color: 0xffffff,metalness:1,roughness: 0.2 });
+        var cylinderN = new THREE.Mesh(geometryN, materialN);
+        cylinderN.position.set(0,0.051,0); //位置を指定
+        //cylinderN.rotation.set(0,30,0);
+        scene.add(cylinderN);   // シーンに追加
+
+        // 空窓(昼)を作成
+        var geometrySWM = new THREE.CylinderGeometry(0.4, 0.4, 0.001, 64);
+        //var materialSWM = new THREE.MeshPhongMaterial({ color: 0xffffff,metalness:1,roughness: 0.2 });
+        var materialSWM = new THREE.MeshStandardMaterial({ color: 0xffbc00,metalness:1,roughness: 0.2 });
+        var cylinderSWM = new THREE.Mesh(geometrySWM, materialSWM);
+        cylinderSWM.position.set(0.3,0.052,0.2); //位置を指定
+        //cylinderSWM.rotation.set(0,30,0);
+        scene.add(cylinderSWM);   // シーンに追加
+
+        // 空窓(夜)を作成
+        var geometrySWN = new THREE.CylinderGeometry(0.4, 0.4, 0.001, 64);
+        //var materialSWN = new THREE.MeshPhongMaterial({ color: 0xffffff,metalness:1,roughness: 0.2 });
+        var materialSWN = new THREE.MeshStandardMaterial({ color: 0x191970,metalness:1,roughness: 0.2 });
+        var cylinderSWN = new THREE.Mesh(geometrySWN, materialSWN);
+        cylinderSWN.position.set(0.3,0.052,0.2); //位置を指定
+        //cylinderSWN.rotation.set(0,30,0);
+        scene.add(cylinderSWN);   // シーンに追加
+        
+        // 短針を作成
+        var geometryH = new THREE.CylinderGeometry(0.025, 0.025, 0.5, 16);
+        var materialH = new THREE.MeshStandardMaterial({ color: 0x000000,metalness:1,roughness: 0.2 });
+        //var materialH = new THREE.MeshPhongMaterial({ color: 0xff00ff,metalness:1,roughness: 0.2 });
+        var cylinderH = new THREE.Mesh(geometryH, materialH);
+        cylinderH.position.set(0,0.05,0.25); //位置を指定
+        cylinderH.rotation.set(Math.PI/2,0,0);
+        scene.add(cylinderH);   // シーンに追加
+
+        // 長針を作成
+        var geometryM = new THREE.CylinderGeometry(0.015, 0.015, 0.8, 16);
+        var materialM = new THREE.MeshStandardMaterial({ color: 0x000000,metalness:1,roughness: 0.2 });
+        //var materialM = new THREE.MeshPhongMaterial({ color: 0x0000ff,metalness:1,roughness: 0.2 });
+        var cylinderM = new THREE.Mesh(geometryM, materialM);
+        cylinderM.position.set(0,0.05,0.4); //位置を指定
+        cylinderM.rotation.set(Math.PI/2,0,0);
+        scene.add(cylinderM);   // シーンに追加
+
+        // 秒針を作成
+        var geometryS = new THREE.CylinderGeometry(0.005, 0.005, 1, 16);
+        var materialS = new THREE.MeshStandardMaterial({ color: 0x000000,metalness:1,roughness: 0.2 });
+        //var materialS = new THREE.MeshPhongMaterial({ color: 0x0000ff,metalness:1,roughness: 0.2 });
+        var cylinderS = new THREE.Mesh(geometryS, materialS);
+        cylinderS.position.set(0,0.05,0.4); //位置を指定
+        cylinderS.rotation.set(Math.PI/2,0,0);
+        scene.add(cylinderS);   // シーンに追加
+
+        
+
+        update();
+
+        var angleInDegrees=0;
+        var angleSW=0;
+        var isSwitch=false;
+        var isRotationN=false;
+        var isRotationM=false;
+
+        // 毎フレーム時に実行されるループイベントです
+        function update() {
+          // レンダリング
+          renderer.render(scene, camera);
+          requestAnimationFrame(update);
+          // 円柱を回転させる
+          // cylinder.rotation.x += 0.01;
+          // cylinder.rotation.z += 0.01;
+
+          //装飾1の回転
+          torusRO1.rotation.x += 0.02;
+          torusRO1.rotation.y += 0.02;
+
+          //装飾2の回転
+          torusRO2.rotation.x -= 0.02;
+          torusRO2.rotation.z -= 0.02;
+
+          angleInDegrees-=0.7;
+          var angleInRadians = angleInDegrees * Math.PI / 180;
+          //短針の回転
+          cylinderH.position.x = 0.25*Math.sin(angleInRadians);
+          cylinderH.position.z = 0.25*Math.cos(angleInRadians);
+          cylinderH.rotation.z = -angleInRadians;
+
+          
+          if((-angleInRadians)%(4*Math.PI)>Math.PI&&(-angleInRadians)%(4*Math.PI)<(2*Math.PI)&&isSwitch==false)
+          {
+            cylinderSWN.rotation.z=0.001;
+            cylinderSWN.position.set(0.3,0.051,0.2); //位置を指定
+            cylinderSWM.position.set(0.3,0.052,0.2); //位置を指定
+            isRotationN=true;
+            isSwitch=true;
+          }
+          else if((-angleInRadians)%(4*Math.PI)>(3*Math.PI)&&(-angleInRadians)%(4*Math.PI)<(4*Math.PI)&&isSwitch==false)
+          {
+            cylinderSWM.rotation.z=0.001;
+            cylinderSWM.position.set(0.3,0.051,0.2); //位置を指定
+            cylinderSWN.position.set(0.3,0.052,0.2); //位置を指定
+            isRotationM=true;
+            isSwitch=true;
+          }
+          
+          if((-angleInRadians)%(4*Math.PI)>(2*Math.PI)&&(-angleInRadians)%(4*Math.PI)<(3*Math.PI)&&isSwitch==true)
+          {
+            isSwitch=false;
+          }
+          else if((-angleInRadians)%(4*Math.PI)>0&&(-angleInRadians)%(4*Math.PI)<Math.PI&&isSwitch==true)
+          {
+            isSwitch=false;
+          }
+
+          
+          
+          
+          if(isRotationN==true)
+          {
+            angleSW-=2;
+            var angleInRadiansSW=angleSW*Math.PI/180;
+            if(angleInRadiansSW>=-Math.PI)
+            {
+              cylinderSWM.rotation.z=angleInRadiansSW;
+            }
+            else
+            {
+              cylinderSWN.rotation.z=0;
+              cylinderSWN.position.set(0.3,0.050,0.2); //位置を指定
+              angleSW=0;
+              isRotationN=false;
+            }
+          }
+          if(isRotationM==true)
+          {
+            angleSW-=2;
+            var angleInRadiansSW=angleSW*Math.PI/180;
+            if(angleInRadiansSW>=-Math.PI)
+            {
+              cylinderSWN.rotation.z=angleInRadiansSW;
+            }
+            else
+            {
+              cylinderSWM.rotation.z=0;
+              cylinderSWM.position.set(0.3,0.050,0.2); //位置を指定
+              angleSW=0;
+              isRotationM=false;
+            }
+          }
+          
+          
+
+          //長針の回転
+          angleInRadians*=12;
+          cylinderM.position.x = 0.4*Math.sin(angleInRadians);
+          cylinderM.position.z = 0.4*Math.cos(angleInRadians);
+          cylinderM.rotation.z = -angleInRadians;
+
+          //秒針の回転
+          angleInRadians*=12*60;
+          cylinderS.position.x = 0.4*Math.sin(angleInRadians);
+          cylinderS.position.z = 0.4*Math.cos(angleInRadians);
+          cylinderS.rotation.z = -angleInRadians;
+        }
+      }
+    </script>
+</body>
+</html>
