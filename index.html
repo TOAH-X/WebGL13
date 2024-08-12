@@ -106,52 +106,11 @@
         //cylinder.rotation.set(0,30,0);
         scene.add(cylinder);   // シーンに追加
 
-        // 縁を作成
-        const geometryR = new THREE.TorusGeometry( 1.1, 0.1, 6, 128 ); 
-        //var materialR = new THREE.MeshPhongMaterial({ color: 0xdab300,metalness:1,roughness: 0.2 });
-        var materialR = new THREE.MeshStandardMaterial({ color: 0xdab300,metalness:1,roughness: 0.2 });
-        var torusR = new THREE.Mesh(geometryR, materialR);
-        torusR.position.set(0,0,0); //位置を指定
-        torusR.rotation.set(Math.PI/2,0,0);
-        scene.add(torusR);   // シーンに追加
+        
 
         
         
-        // ボタン先端を作成
-        var geometryB1 = new THREE.CylinderGeometry(0.14, 0.14, 0.1, 64);
-        //var materialB1 = new THREE.MeshPhongMaterial({ color: 0xdab300,metalness:1,roughness: 0.2 });
-        var materialB1 = new THREE.MeshStandardMaterial({ color: 0xdab300,metalness:1,roughness: 0.2 });
-        var cylinderB1 = new THREE.Mesh(geometryB1, materialB1);
-        cylinderB1.position.set(0,0,1.4); //位置を指定
-        cylinderB1.rotation.set(Math.PI/2,0,0);
-        scene.add(cylinderB1);   // シーンに追加
-
-        // ボタン基部を作成
-        var geometryB2 = new THREE.CylinderGeometry(0.08, 0.08, 0.3, 64);
-        //var materialB2 = new THREE.MeshPhongMaterial({ color: 0xdab300,metalness:1,roughness: 0.2 });
-        var materialB2 = new THREE.MeshStandardMaterial({ color: 0xdab300,metalness:1,roughness: 0.2 });
-        var cylinderB2 = new THREE.Mesh(geometryB2, materialB2);
-        cylinderB2.position.set(0,0,1.3); //位置を指定
-        cylinderB2.rotation.set(Math.PI/2,0,0);
-        scene.add(cylinderB2);   // シーンに追加
-
-        // 蓋の基礎を作成
-        var geometryC = new THREE.CylinderGeometry(1.2, 1.2, 0.05, 64);
-        //var materialC = new THREE.MeshPhongMaterial({ color: 0xdab300,metalness:1,roughness: 0.2 });
-        var materialC = new THREE.MeshStandardMaterial({ color: 0xdab300,metalness:1,roughness: 0.2 });
-        var cylinderC = new THREE.Mesh(geometryC, materialC);
-        cylinderC.position.set(0,-1.2,-1.2); //位置を指定
-        cylinderC.rotation.set(Math.PI/2,0,0);
-        scene.add(cylinderC);   // シーンに追加
-
-        // 蓋の縁を作成
-        const geometryRC = new THREE.TorusGeometry( 1.1, 0.1, 6, 128 ); 
-        //var materialRC = new THREE.MeshPhongMaterial({ color: 0xdab300,metalness:1,roughness: 0.2 });
-        var materialRC = new THREE.MeshStandardMaterial({ color: 0xdab300,metalness:1,roughness: 0.2 });
-        var torusRC = new THREE.Mesh(geometryRC, materialRC);
-        torusRC.position.set(0,-1.2,-1.2); //位置を指定
-        torusRC.rotation.set(0,0,0);
-        scene.add(torusRC);   // シーンに追加
+        
         
         // 文字盤を作成
         var geometryN = new THREE.CylinderGeometry(1, 1, 0.001, 64);
