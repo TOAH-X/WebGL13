@@ -162,23 +162,7 @@
         //cylinderN.rotation.set(0,30,0);
         scene.add(cylinderN);   // シーンに追加
 
-        // 空窓(昼)を作成
-        var geometrySWM = new THREE.CylinderGeometry(0.4, 0.4, 0.001, 64);
-        //var materialSWM = new THREE.MeshPhongMaterial({ color: 0xffffff,metalness:1,roughness: 0.2 });
-        var materialSWM = new THREE.MeshStandardMaterial({ color: 0xffbc00,metalness:1,roughness: 0.2 });
-        var cylinderSWM = new THREE.Mesh(geometrySWM, materialSWM);
-        cylinderSWM.position.set(0.3,0.052,0.2); //位置を指定
-        //cylinderSWM.rotation.set(0,30,0);
-        scene.add(cylinderSWM);   // シーンに追加
-
-        // 空窓(夜)を作成
-        var geometrySWN = new THREE.CylinderGeometry(0.4, 0.4, 0.001, 64);
-        //var materialSWN = new THREE.MeshPhongMaterial({ color: 0xffffff,metalness:1,roughness: 0.2 });
-        var materialSWN = new THREE.MeshStandardMaterial({ color: 0x191970,metalness:1,roughness: 0.2 });
-        var cylinderSWN = new THREE.Mesh(geometrySWN, materialSWN);
-        cylinderSWN.position.set(0.3,0.052,0.2); //位置を指定
-        //cylinderSWN.rotation.set(0,30,0);
-        scene.add(cylinderSWN);   // シーンに追加
+        
         
         // 短針を作成
         var geometryH = new THREE.CylinderGeometry(0.025, 0.025, 0.5, 16);
@@ -234,67 +218,14 @@
           cylinderH.rotation.z = -angleInRadians;
 
           
-          if((-angleInRadians)%(4*Math.PI)>Math.PI&&(-angleInRadians)%(4*Math.PI)<(2*Math.PI)&&isSwitch==false)
-          {
-            cylinderSWN.rotation.z=0.001;
-            cylinderSWN.position.set(0.3,0.051,0.2); //位置を指定
-            cylinderSWM.position.set(0.3,0.052,0.2); //位置を指定
-            isRotationN=true;
-            isSwitch=true;
-          }
-          else if((-angleInRadians)%(4*Math.PI)>(3*Math.PI)&&(-angleInRadians)%(4*Math.PI)<(4*Math.PI)&&isSwitch==false)
-          {
-            cylinderSWM.rotation.z=0.001;
-            cylinderSWM.position.set(0.3,0.051,0.2); //位置を指定
-            cylinderSWN.position.set(0.3,0.052,0.2); //位置を指定
-            isRotationM=true;
-            isSwitch=true;
-          }
           
-          if((-angleInRadians)%(4*Math.PI)>(2*Math.PI)&&(-angleInRadians)%(4*Math.PI)<(3*Math.PI)&&isSwitch==true)
-          {
-            isSwitch=false;
-          }
-          else if((-angleInRadians)%(4*Math.PI)>0&&(-angleInRadians)%(4*Math.PI)<Math.PI&&isSwitch==true)
-          {
-            isSwitch=false;
-          }
+          
+          
 
           
           
           
-          if(isRotationN==true)
-          {
-            angleSW-=2;
-            var angleInRadiansSW=angleSW*Math.PI/180;
-            if(angleInRadiansSW>=-Math.PI)
-            {
-              cylinderSWM.rotation.z=angleInRadiansSW;
-            }
-            else
-            {
-              cylinderSWN.rotation.z=0;
-              cylinderSWN.position.set(0.3,0.050,0.2); //位置を指定
-              angleSW=0;
-              isRotationN=false;
-            }
-          }
-          if(isRotationM==true)
-          {
-            angleSW-=2;
-            var angleInRadiansSW=angleSW*Math.PI/180;
-            if(angleInRadiansSW>=-Math.PI)
-            {
-              cylinderSWN.rotation.z=angleInRadiansSW;
-            }
-            else
-            {
-              cylinderSWM.rotation.z=0;
-              cylinderSWM.position.set(0.3,0.050,0.2); //位置を指定
-              angleSW=0;
-              isRotationM=false;
-            }
-          }
+          
           
           
 
