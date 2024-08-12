@@ -120,7 +120,7 @@
         
         // 短針を作成
         var geometryH = new THREE.CylinderGeometry(0.025, 0.025, 0.5, 16);
-        var materialH = new THREE.MeshStandardMaterial({ color: 0x000000,metalness:1,roughness: 0.2 });
+        var materialH = new THREE.MeshLambertMaterial({ color: 0x000000,metalness:1,roughness: 0.2 });
         //var materialH = new THREE.MeshPhongMaterial({ color: 0xff00ff,metalness:1,roughness: 0.2 });
         var cylinderH = new THREE.Mesh(geometryH, materialH);
         cylinderH.position.set(0.05,0.25,0); //位置を指定
@@ -129,7 +129,7 @@
 
         // 長針を作成
         var geometryM = new THREE.CylinderGeometry(0.015, 0.015, 0.8, 16);
-        var materialM = new THREE.MeshStandardMaterial({ color: 0x000000,metalness:1,roughness: 0.2 });
+        var materialM = new THREE.MeshLambertMaterial({ color: 0x000000,metalness:1,roughness: 0.2 });
         //var materialM = new THREE.MeshPhongMaterial({ color: 0x0000ff,metalness:1,roughness: 0.2 });
         var cylinderM = new THREE.Mesh(geometryM, materialM);
         cylinderM.position.set(0.05,0.4,0); //位置を指定
@@ -138,7 +138,7 @@
 
         // 秒針を作成
         var geometryS = new THREE.CylinderGeometry(0.005, 0.005, 1, 16);
-        var materialS = new THREE.MeshStandardMaterial({ color: 0x000000,metalness:1,roughness: 0.2 });
+        var materialS = new THREE.MeshLambertMaterial({ color: 0x000000,metalness:1,roughness: 0.2 });
         //var materialS = new THREE.MeshPhongMaterial({ color: 0x0000ff,metalness:1,roughness: 0.2 });
         var cylinderS = new THREE.Mesh(geometryS, materialS);
         cylinderS.position.set(0.05,0.4,0); //位置を指定
