@@ -123,7 +123,7 @@
         var materialH = new THREE.MeshStandardMaterial({ color: 0x000000,metalness:1,roughness: 0.2 });
         //var materialH = new THREE.MeshPhongMaterial({ color: 0xff00ff,metalness:1,roughness: 0.2 });
         var cylinderH = new THREE.Mesh(geometryH, materialH);
-        cylinderH.position.set(0.05,0.25,0); //位置を指定
+        cylinderH.position.set(0,0.05,0.25); //位置を指定
         cylinderH.rotation.set(0,0,Math.PI/2);//x
         scene.add(cylinderH);   // シーンに追加
 
@@ -132,7 +132,7 @@
         var materialM = new THREE.MeshStandardMaterial({ color: 0x000000,metalness:1,roughness: 0.2 });
         //var materialM = new THREE.MeshPhongMaterial({ color: 0x0000ff,metalness:1,roughness: 0.2 });
         var cylinderM = new THREE.Mesh(geometryM, materialM);
-        cylinderM.position.set(0.05,0.4,0); //位置を指定
+        cylinderM.position.set(0,0.05,0.4); //位置を指定
         cylinderM.rotation.set(0,0,Math.PI/2);
         scene.add(cylinderM);   // シーンに追加
 
@@ -141,7 +141,7 @@
         var materialS = new THREE.MeshStandardMaterial({ color: 0x000000,metalness:1,roughness: 0.2 });
         //var materialS = new THREE.MeshPhongMaterial({ color: 0x0000ff,metalness:1,roughness: 0.2 });
         var cylinderS = new THREE.Mesh(geometryS, materialS);
-        cylinderS.position.set(0.05,0.4,0); //位置を指定
+        cylinderS.position.set(0,0.05,0.4); //位置を指定
         cylinderS.rotation.set(0,Math.PI/2,0);
         scene.add(cylinderS);   // シーンに追加
 
