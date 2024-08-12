@@ -117,9 +117,11 @@
         scene.add(cylinderN);   // シーンに追加
 
         // 箱上部
-        const geometry = new THREE.BoxGeometry( 1.5, 0.2, 1.5 );
-        const material = new THREE.MeshBasicMaterial( {color: 0xFF0000} );
-        const cube = new THREE.Mesh( geometry, material );
+        ver geometry = new THREE.BoxGeometry( 1.5, 0.2, 1.5 );
+        ver material = new THREE.MeshBasicMaterial( {color: 0xFF0000} );
+        ver cube = new THREE.Mesh( geometry, material );
+        cube.position.set(0,1,0); //位置を指定 //y
+        cube.rotation.set(0,0,0);
         scene.add( cube );
         
         // 短針を作成
