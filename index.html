@@ -121,8 +121,8 @@
         //var materialCube = new THREE.MeshPhongMaterial({ color: 0xffffff,metalness:1,roughness: 0.2 });
         var materialCube = new THREE.MeshLambertMaterial({ color: 0xffffff,metalness:1,roughness: 0.2 });
         var cubeCube = new THREE.Mesh(geometryCube, materialCube);
-        cubeCube.position.set(0,0,0.051); //位置を指定 //y
-        cubeCube.rotation.set(Math.PI/2,0,0);
+        cubeCube.position.set(0,0,1.5); //位置を指定 //y
+        cubeCube.rotation.set(0,0,0);
         scene.add(cubeCube);   // シーンに追加
         
         
