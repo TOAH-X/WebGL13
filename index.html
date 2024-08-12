@@ -117,9 +117,9 @@
         scene.add(cylinderN);   // シーンに追加
 
         // 箱上部
-        ver geometry = new THREE.BoxGeometry( 1.5, 0.2, 1.5 );
-        ver material = new THREE.MeshBasicMaterial( {color: 0xFF0000} );
-        ver cube = new THREE.Mesh( geometry, material );
+        ver geometryCube = new THREE.BoxGeometry( 1.5, 0.2, 1.5 );
+        ver materialCube = new THREE.MeshBasicMaterial( {color: 0xFF0000} );
+        ver cube = new THREE.Mesh( geometryCube, materialCube );
         cube.position.set(0,1,0); //位置を指定 //y
         cube.rotation.set(0,0,0);
         scene.add( cube );
