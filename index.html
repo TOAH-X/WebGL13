@@ -167,21 +167,21 @@
           angleInDegrees-=0.7;
           var angleInRadians = angleInDegrees * Math.PI / 180;
           //短針の回転
-          cylinderH.position.z = 0.25*Math.sin(angleInRadians);//x
-          cylinderH.position.y = 0.25*Math.cos(angleInRadians);//z
-          cylinderH.rotation.y = -angleInRadians;//z
+          cylinderH.position.y = 0.25*Math.sin(angleInRadians);//x
+          cylinderH.position.z = 0.25*Math.cos(angleInRadians);//z
+          cylinderH.rotation.z = -angleInRadians;//z
 
           //長針の回転
           angleInRadians*=12;
-          cylinderM.position.z = 0.4*Math.sin(angleInRadians);
-          cylinderM.position.y = 0.4*Math.cos(angleInRadians);
-          cylinderM.rotation.y = -angleInRadians;
+          cylinderM.position.y = 0.4*Math.sin(angleInRadians);
+          cylinderM.position.z = 0.4*Math.cos(angleInRadians);
+          cylinderM.rotation.z = -angleInRadians;
 
           //秒針の回転
           angleInRadians*=12*60;
-          cylinderS.position.z = 0.4*Math.sin(angleInRadians);
-          cylinderS.position.y = 0.4*Math.cos(angleInRadians);
-          cylinderS.rotation.y = -angleInRadians;
+          cylinderS.position.y = 0.4*Math.sin(angleInRadians);
+          cylinderS.position.z = 0.4*Math.cos(angleInRadians);
+          cylinderS.rotation.z = -angleInRadians;
         }
       }
     </script>
