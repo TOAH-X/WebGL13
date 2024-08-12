@@ -117,12 +117,14 @@
         scene.add(cylinderN);   // シーンに追加
 
         // 箱上部
-        ver geometryCube = new THREE.BoxGeometry( 1.5, 0.2, 1.5 );
-        ver materialCube = new THREE.MeshBasicMaterial( {color: 0xFF0000} );
-        ver cube = new THREE.Mesh( geometryCube, materialCube );
-        cube.position.set(0,1,0); //位置を指定 //y
-        cube.rotation.set(0,0,0);
-        scene.add( cube );
+        var geometryCube = new THREE.BoxGeometry(1.5, 0.2, 1.5);
+        //var materialCube = new THREE.MeshPhongMaterial({ color: 0xffffff,metalness:1,roughness: 0.2 });
+        var materialCube = new THREE.MeshLambertMaterial({ color: 0xffffff,metalness:1,roughness: 0.2 });
+        var cubeCube = new THREE.Mesh(geometryCube, materialCube);
+        cubeCube.position.set(0,0,0.051); //位置を指定 //y
+        cubeCube.rotation.set(Math.PI/2,0,0);
+        scene.add(cubeCube);   // シーンに追加
+        
         
         // 短針を作成
         var geometryH = new THREE.CylinderGeometry(0.025, 0.025, 0.5, 16);
