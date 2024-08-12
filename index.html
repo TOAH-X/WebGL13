@@ -103,7 +103,7 @@
         var material = new THREE.MeshStandardMaterial({ color: 0xdab300,metalness:1,roughness: 0.2 });
         var cylinder = new THREE.Mesh(geometry, material);
         cylinder.position.set(0,0,0); //位置を指定
-        cylinder.rotation.set(0,Math.PI/2,0);//元々コメント
+        cylinder.rotation.set(Math.PI/2,0,0);//元々コメント
         scene.add(cylinder);   // シーンに追加
         
         // 文字盤を作成
@@ -112,7 +112,7 @@
         var materialN = new THREE.MeshStandardMaterial({ color: 0xffffff,metalness:1,roughness: 0.2 });
         var cylinderN = new THREE.Mesh(geometryN, materialN);
         cylinderN.position.set(0,0.051,0); //位置を指定
-        cylinderN.rotation.set(0,Math.PI/2,0);
+        cylinderN.rotation.set(Math.PI/2,0,0);
         scene.add(cylinderN);   // シーンに追加
 
         
