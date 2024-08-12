@@ -124,7 +124,7 @@
         //var materialH = new THREE.MeshPhongMaterial({ color: 0xff00ff,metalness:1,roughness: 0.2 });
         var cylinderH = new THREE.Mesh(geometryH, materialH);
         cylinderH.position.set(0,0.05,0.25); //位置を指定
-        cylinderH.rotation.set(0,0,Math.PI/2);//x
+        cylinderH.rotation.set(0,0,0);//x...Math.PI/2
         scene.add(cylinderH);   // シーンに追加
 
         // 長針を作成
@@ -133,7 +133,7 @@
         //var materialM = new THREE.MeshPhongMaterial({ color: 0x0000ff,metalness:1,roughness: 0.2 });
         var cylinderM = new THREE.Mesh(geometryM, materialM);
         cylinderM.position.set(0,0.05,0.4); //位置を指定
-        cylinderM.rotation.set(0,0,Math.PI/2);
+        cylinderM.rotation.set(0,0,0);
         scene.add(cylinderM);   // シーンに追加
 
         // 秒針を作成
@@ -142,7 +142,7 @@
         //var materialS = new THREE.MeshPhongMaterial({ color: 0x0000ff,metalness:1,roughness: 0.2 });
         var cylinderS = new THREE.Mesh(geometryS, materialS);
         cylinderS.position.set(0,0.05,0.4); //位置を指定
-        cylinderS.rotation.set(0,Math.PI/2,0);
+        cylinderS.rotation.set(0,0,0);
         scene.add(cylinderS);   // シーンに追加
 
         
@@ -169,19 +169,19 @@
           //短針の回転
           cylinderH.position.y = 0.25*Math.sin(angleInRadians);//x
           cylinderH.position.x = 0.25*Math.cos(angleInRadians);//z
-          cylinderH.rotation.z = angleInRadians*2;//z
+          cylinderH.rotation.z = angleInRadians;//z
 
           //長針の回転
           angleInRadians*=12;
           cylinderM.position.y = 0.4*Math.sin(angleInRadians);
           cylinderM.position.x = 0.4*Math.cos(angleInRadians);
-          cylinderM.rotation.z = angleInRadians*2;
+          cylinderM.rotation.z = angleInRadians;
 
           //秒針の回転
           angleInRadians*=12*60;
           cylinderS.position.y = 0.4*Math.sin(angleInRadians);
           cylinderS.position.x = 0.4*Math.cos(angleInRadians);
-          cylinderS.rotation.z = angleInRadians*2;
+          cylinderS.rotation.z = angleInRadians;
           //(x,y,z)→(y,z,x)
         }
       }
