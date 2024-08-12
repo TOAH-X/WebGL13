@@ -116,7 +116,11 @@
         cylinderN.rotation.set(Math.PI/2,0,0);
         scene.add(cylinderN);   // シーンに追加
 
-        
+        // 箱上部
+        const geometry = new THREE.BoxGeometry( 1.5, 0.2, 1.5 );
+        const material = new THREE.MeshBasicMaterial( {color: 0xFF0000} );
+        const cube = new THREE.Mesh( geometry, material );
+        scene.add( cube );
         
         // 短針を作成
         var geometryH = new THREE.CylinderGeometry(0.025, 0.025, 0.5, 16);
