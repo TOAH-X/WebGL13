@@ -124,7 +124,7 @@
         //var materialH = new THREE.MeshPhongMaterial({ color: 0xff00ff,metalness:1,roughness: 0.2 });
         var cylinderH = new THREE.Mesh(geometryH, materialH);
         cylinderH.position.set(0,0.05,0.25); //位置を指定
-        cylinderH.rotation.set(0,0,Math.PI/2);//x
+        cylinderH.rotation.set(0,Math.PI/2,0);//x
         scene.add(cylinderH);   // シーンに追加
 
         // 長針を作成
@@ -167,21 +167,21 @@
           angleInDegrees-=0.7;
           var angleInRadians = angleInDegrees * Math.PI / 180;
           //短針の回転
-          cylinderH.position.z = 0.25*Math.sin(angleInRadians);//x
-          cylinderH.position.y = 0.25*Math.cos(angleInRadians);//z
-          cylinderH.rotation.y = -angleInRadians;//z
+          cylinderH.position.y = 0.25*Math.sin(angleInRadians);//x
+          cylinderH.position.z = 0.25*Math.cos(angleInRadians);//z
+          cylinderH.rotation.z = -angleInRadians;//z
 
           //長針の回転
           angleInRadians*=12;
-          cylinderM.position.z = 0.4*Math.sin(angleInRadians);
-          cylinderM.position.y = 0.4*Math.cos(angleInRadians);
-          cylinderM.rotation.y = -angleInRadians;
+          cylinderM.position.y = 0.4*Math.sin(angleInRadians);
+          cylinderM.position.z = 0.4*Math.cos(angleInRadians);
+          cylinderM.rotation.z = -angleInRadians;
 
           //秒針の回転
           angleInRadians*=12*60;
-          cylinderS.position.z = 0.4*Math.sin(angleInRadians);
-          cylinderS.position.y = 0.4*Math.cos(angleInRadians);
-          cylinderS.rotation.y = -angleInRadians;
+          cylinderS.position.y = 0.4*Math.sin(angleInRadians);
+          cylinderS.position.z = 0.4*Math.cos(angleInRadians);
+          cylinderS.rotation.z = -angleInRadians;
           //(x,y,z)→(z,x,y)
         }
       }
