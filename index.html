@@ -210,7 +210,7 @@
           angleInRadiansF+=Math.PI/30;
           if(flagF==1)
           {
-            angleInRadiansF+=Math.cos(angleInRadians)*0.02;
+            angleInRadiansF=Math.cos(angleInRadians)*0.02;
             if(angleInRadiansF>=Math.PI)
             {
               angleInRadiansF=0;
@@ -219,7 +219,7 @@
           }
           else if(flagF==2)
           {
-            angleInRadiansF-=Math.sin(angleInRadians)*0.02;
+            angleInRadiansF=-Math.sin(angleInRadians)*0.02;
             if(angleInRadiansF>=Math.PI)
             {
               angleInRadiansF=0;
@@ -228,7 +228,7 @@
           }
           else if(flagF==3)
           {
-            angleInRadiansF-=Math.cos(angleInRadians)*0.02;
+            angleInRadiansF=-Math.cos(angleInRadians)*0.02;
             if(angleInRadiansF>=Math.PI)
             {
               angleInRadiansF=0;
@@ -237,7 +237,7 @@
           }
           else(flagF==4)
           {
-            angleInRadiansF+=Math.sin(angleInRadians)*0.02;
+            angleInRadiansF=Math.sin(angleInRadians)*0.02;
             if(angleInRadiansF>=Math.PI)
             {
               angleInRadiansF=0;
