@@ -179,6 +179,8 @@
         var isSwitch=false;
         var isRotationN=false;
         var isRotationM=false;
+        //振り子の角度
+        var angleInRadiansF= 0;
 
         // 毎フレーム時に実行されるループイベントです
         function update() {
@@ -189,8 +191,20 @@
           // cylinder.rotation.x += 0.01;
           // cylinder.rotation.z += 0.01;
           
-          angleInDegrees-=0.7;
+          angleInDegrees-=0.1;
           var angleInRadians = angleInDegrees * Math.PI / 180;
+
+          
+
+          if(angleInRadians/Math.PI*360>180)
+          {
+            angleInRadiansf+=0.01;
+          }
+          else
+          {
+            angleInRadiansf-=0.01;
+          }
+          
           
           // 振り子の軸を揺らす
           //cylinderH.position.y = 0.25*Math.sin(angleInRadians);//x
