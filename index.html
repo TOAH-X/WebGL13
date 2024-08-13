@@ -179,6 +179,7 @@
         var isSwitch=false;
         var isRotationN=false;
         var isRotationM=false;
+        var flagF=1;
         //振り子の角度
         var angleInRadiansF= 0;
 
@@ -196,13 +197,52 @@
 
           
 
+          /*
           if((angleInRadians/Math.PI*360)%72<-36)
           {
-            angleInRadiansF=Math.cos(angleInRadians)*0.02;
+            angleInRadiansF+=Math.cos(angleInRadians)*0.02;
           }
           else
           {
-            angleInRadiansF=-Math.cos(angleInRadians)*0.02;
+            angleInRadiansF-=Math.cos(angleInRadians)*0.02;
+          }
+          */
+          angleInRadiansF+=Math.PI/30;
+          if(flagF==1)
+          {
+            angleInRadiansF+=Math.cos(angleInRadians)*0.02;
+            if(angleInRadiansF>=Math.PI)
+            {
+              angleInRadiansF=0;
+              flag=2;
+            }
+          }
+          else if(flagF==2)
+          {
+            angleInRadiansF-=Math.sin(angleInRadians)*0.02;
+            if(angleInRadiansF>=Math.PI)
+            {
+              angleInRadiansF=0;
+              flag=3;
+            }
+          }
+          else if(flagF==3)
+          {
+            angleInRadiansF-=Math.cos(angleInRadians)*0.02;
+            if(angleInRadiansF>=Math.PI)
+            {
+              angleInRadiansF=0;
+              flag=4;
+            }
+          }
+          else(flagF==4)
+          {
+            angleInRadiansF+=Math.sin(angleInRadians)*0.02;
+            if(angleInRadiansF>=Math.PI)
+            {
+              angleInRadiansF=0;
+              flag=1;
+            }
           }
           
           
