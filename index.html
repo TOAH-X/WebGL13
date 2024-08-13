@@ -196,7 +196,7 @@
 
           
 
-          if((angleInRadians/Math.PI*360)%360>30)
+          if((angleInRadians/Math.PI*360)%360>0.5)
           {
             angleInRadiansF+=0.01;
           }
@@ -207,8 +207,8 @@
           
           
           // 振り子の軸を揺らす
-          cylinderFZ.position.y = 0.25*Math.sin(angleInRadiansF);//x
-          cylinderFZ.position.x = 0.25*Math.cos(angleInRadiansF)-0.5;//z
+          cylinderFZ.position.y = 0.25*Math.sin(angleInRadiansF)-0.5;//x
+          cylinderFZ.position.x = 0.25*Math.cos(angleInRadiansF);//z
           cylinderFZ.rotation.z = angleInRadiansF+Math.PI/2;//z
           
           //短針の回転
