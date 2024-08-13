@@ -198,11 +198,11 @@
 
           if((angleInRadians/Math.PI*360)%72<-36)
           {
-            angleInRadiansF+=0.01;
+            angleInRadiansF+=Math.sin(angleInRadians)*0.02;
           }
           else
           {
-            angleInRadiansF-=0.01;
+            angleInRadiansF-=Math.sin(angleInRadians)*0.02;
           }
           
           
