@@ -212,36 +212,36 @@
           if(flagF==1)
           {
             angleInRadiansF=Math.cos(angleInRadiansFE)*0.02;
-            if(angleInRadiansF>=Math.PI)
+            if(angleInRadiansFE>=Math.PI)
             {
-              angleInRadiansF=0;
+              angleInRadiansFE=0;
               flagF=2;
             }
           }
           else if(flagF==2)
           {
             angleInRadiansF=-Math.sin(angleInRadiansFE)*0.02;
-            if(angleInRadiansF>=Math.PI)
+            if(angleInRadiansFE>=Math.PI)
             {
-              angleInRadiansF=0;
+              angleInRadiansFE=0;
               flagF=3;
             }
           }
           else if(flagF==3)
           {
             angleInRadiansF=-Math.cos(angleInRadiansFE)*0.02;
-            if(angleInRadiansF>=Math.PI)
+            if(angleInRadiansFE>=Math.PI)
             {
-              angleInRadiansF=0;
+              angleInRadiansFE=0;
               flagF=4;
             }
           }
           else if(flagF==4)
           {
             angleInRadiansF=Math.sin(angleInRadiansFE)*0.02;
-            if(angleInRadiansF>=Math.PI)
+            if(angleInRadiansFE>=Math.PI)
             {
-              angleInRadiansF=0;
+              angleInRadiansFE=0;
               flagF=1;
             }
           }
