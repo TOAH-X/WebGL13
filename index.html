@@ -117,13 +117,22 @@
         scene.add(cylinderN);   // シーンに追加
 
         // 箱上部
-        var geometryCube = new THREE.BoxGeometry(2, 0.2, 2);
-        //var materialCube = new THREE.MeshPhongMaterial({ color: 0xffffff,metalness:1,roughness: 0.2 });
-        var materialCube = new THREE.MeshLambertMaterial({ color: 0xffffff,metalness:1,roughness: 0.2 });
-        var cubeCube = new THREE.Mesh(geometryCube, materialCube);
-        cubeCube.position.set(0,1.5,0); //位置を指定 //y
-        cubeCube.rotation.set(0,0,0);
-        scene.add(cubeCube);   // シーンに追加
+        var geometryCubeA = new THREE.BoxGeometry(2, 0.2, 2);
+        //var materialCubeA = new THREE.MeshPhongMaterial({ color: 0x5c482c,metalness:1,roughness: 0.2 });
+        var materialCubeA = new THREE.MeshLambertMaterial({ color: 0x5c482c,metalness:1,roughness: 0.2 });
+        var cubeCubeA = new THREE.Mesh(geometryCubeA, materialCubeA);
+        cubeCubeA.position.set(0,1.5,0); //位置を指定 //y
+        cubeCubeA.rotation.set(0,0,0);
+        scene.add(cubeCubeA);   // シーンに追加
+
+        // 箱下部
+        var geometryCubeB = new THREE.BoxGeometry(2, 0.2, 2);
+        //var materialCubeA = new THREE.MeshPhongMaterial({ color: 0x5c482c,metalness:1,roughness: 0.2 });
+        var materialCubeB = new THREE.MeshLambertMaterial({ color: 0x5c482c,metalness:1,roughness: 0.2 });
+        var cubeCubeB = new THREE.Mesh(geometryCubeB, materialCubeB);
+        cubeCubeB.position.set(0,-5.5,0); //位置を指定 //y
+        cubeCubeB.rotation.set(0,0,0);
+        scene.add(cubeCubeB);   // シーンに追加
         
         
         // 短針を作成
