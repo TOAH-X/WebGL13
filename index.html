@@ -130,12 +130,12 @@
         //var materialCubeA = new THREE.MeshPhongMaterial({ color: 0x5c482c,metalness:1,roughness: 0.2 });
         var materialCubeB = new THREE.MeshLambertMaterial({ color: 0x5c482c,metalness:1,roughness: 0.2 });
         var cubeCubeB = new THREE.Mesh(geometryCubeB, materialCubeB);
-        cubeCubeB.position.set(0,-5.5,0); //位置を指定 //y
+        cubeCubeB.position.set(0,-4,0); //位置を指定 //y
         cubeCubeB.rotation.set(0,0,0);
         scene.add(cubeCubeB);   // シーンに追加
 
         // 振り子の軸を作成
-        var geometryFZ = new THREE.CylinderGeometry(0.1, 0.1, 5, 16);
+        var geometryFZ = new THREE.CylinderGeometry(0.1, 0.1, 3, 16);
         var materialFZ = new THREE.MeshLambertMaterial({ color: 0x5c482c,metalness:1,roughness: 0.2 });
         //var materialFZ = new THREE.MeshPhongMaterial({ color: 0xff00ff,metalness:1,roughness: 0.2 });
         var cylinderFZ = new THREE.Mesh(geometryFZ, materialFZ);
