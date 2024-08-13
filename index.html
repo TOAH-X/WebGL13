@@ -182,6 +182,7 @@
         int flagF=1;
         //振り子の角度
         var angleInRadiansF= 0;
+        var angleInRadiansFE=0;
 
         // 毎フレーム時に実行されるループイベントです
         function update() {
@@ -207,10 +208,10 @@
             angleInRadiansF-=Math.cos(angleInRadians)*0.02;
           }
           */
-          angleInRadiansF+=Math.PI/30;
+          angleInRadiansFE+=Math.PI/30;
           if(flagF==1)
           {
-            angleInRadiansF=Math.cos(angleInRadians)*0.02;
+            angleInRadiansF=Math.cos(angleInRadiansFE)*0.02;
             if(angleInRadiansF>=Math.PI)
             {
               angleInRadiansF=0;
@@ -219,7 +220,7 @@
           }
           else if(flagF==2)
           {
-            angleInRadiansF=-Math.sin(angleInRadians)*0.02;
+            angleInRadiansF=-Math.sin(angleInRadiansFE)*0.02;
             if(angleInRadiansF>=Math.PI)
             {
               angleInRadiansF=0;
@@ -228,7 +229,7 @@
           }
           else if(flagF==3)
           {
-            angleInRadiansF=-Math.cos(angleInRadians)*0.02;
+            angleInRadiansF=-Math.cos(angleInRadiansFE)*0.02;
             if(angleInRadiansF>=Math.PI)
             {
               angleInRadiansF=0;
@@ -237,7 +238,7 @@
           }
           else if(flagF==4)
           {
-            angleInRadiansF=Math.sin(angleInRadians)*0.02;
+            angleInRadiansF=Math.sin(angleInRadiansFE)*0.02;
             if(angleInRadiansF>=Math.PI)
             {
               angleInRadiansF=0;
