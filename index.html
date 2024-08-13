@@ -133,7 +133,15 @@
         cubeCubeB.position.set(0,-5.5,0); //位置を指定 //y
         cubeCubeB.rotation.set(0,0,0);
         scene.add(cubeCubeB);   // シーンに追加
-        
+
+        // 振り子の軸を作成
+        var geometryFZ = new THREE.CylinderGeometry(0.1, 0.1, 5, 16);
+        var materialFZ = new THREE.MeshLambertMaterial({ color: 0xFFFFFF,metalness:1,roughness: 0.2 });
+        //var materialFZ = new THREE.MeshPhongMaterial({ color: 0xff00ff,metalness:1,roughness: 0.2 });
+        var cylinderFZ = new THREE.Mesh(geometryFZ, materialFZ);
+        cylinderFZ.position.set(0,0.25,-0.1); //位置を指定
+        cylinderFZ.rotation.set(0,0,Math.PI/2);//x...Math.PI/2
+        scene.add(cylinderHFZ);   // シーンに追加
         
         // 短針を作成
         var geometryH = new THREE.CylinderGeometry(0.025, 0.025, 0.5, 16);
