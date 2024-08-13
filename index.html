@@ -209,7 +209,7 @@
           // 振り子の軸を揺らす
           cylinderFZ.position.y = 0.25*Math.sin(angleInRadiansF)-1;//x
           cylinderFZ.position.x = 0.25*Math.cos(angleInRadiansF);//z
-          cylinderFZ.rotation.z = angleInRadiansF;//z
+          cylinderFZ.rotation.z = angleInRadiansF-Math.PI/5;//z
           
           //短針の回転
           cylinderH.position.y = 0.25*Math.sin(angleInRadians);//x
