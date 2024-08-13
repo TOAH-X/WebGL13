@@ -141,7 +141,7 @@
         var cylinderFZ = new THREE.Mesh(geometryFZ, materialFZ);
         cylinderFZ.position.set(0,0.25,-0.1); //位置を指定
         cylinderFZ.rotation.set(0,0,Math.PI/2);//x...Math.PI/2
-        scene.add(cylinderHFZ);   // シーンに追加
+        scene.add(cylinderFFZ);   // シーンに追加
         
         // 短針を作成
         var geometryH = new THREE.CylinderGeometry(0.025, 0.025, 0.5, 16);
@@ -193,7 +193,9 @@
           var angleInRadians = angleInDegrees * Math.PI / 180;
           
           // 振り子の軸を揺らす
-          //cylinderFZ.position.y = 0.25*Math.sin(angleInRadians);//x
+          //cylinderH.position.y = 0.25*Math.sin(angleInRadians);//x
+          //cylinderH.position.x = 0.25*Math.cos(angleInRadians);//z
+          //cylinderH.rotation.z = angleInRadians+Math.PI/2;//z
           
           //短針の回転
           cylinderH.position.y = 0.25*Math.sin(angleInRadians);//x
