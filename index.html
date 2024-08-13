@@ -129,7 +129,7 @@
         var materialFZ = new THREE.MeshLambertMaterial({ color: 0x5c482c,metalness:1,roughness: 0.2 });
         //var materialFZ = new THREE.MeshPhongMaterial({ color: 0xff00ff,metalness:1,roughness: 0.2 });
         var cylinderFZ = new THREE.Mesh(geometryFZ, materialFZ);
-        cylinderFZ.position.set(0,1,-0.1); //位置を指定
+        cylinderFZ.position.set(0,0,-0.1); //位置を指定
         cylinderFZ.rotation.set(0,0,0);
         scene.add(cylinderFZ);   // シーンに追加
         
@@ -240,7 +240,7 @@
           
           
           // 振り子の軸を揺らす
-          cylinderFZ.position.y = /*0.25*angleInRadiansF*/1;//x
+          cylinderFZ.position.y = /*0.25*angleInRadiansF*/0;//x
           cylinderFZ.position.x = /*0.25*angleInRadiansF*/0;//z
           cylinderFZ.rotation.z = 0.5*angleInRadiansF;//z
           
