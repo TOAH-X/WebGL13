@@ -118,12 +118,20 @@
         scene.add(cubeCubeA);   // シーンに追加
         // 箱下部
         var geometryCubeB = new THREE.BoxGeometry(2, 0.2, 2);
-        //var materialCubeA = new THREE.MeshPhongMaterial({ color: 0x5c482c,metalness:1,roughness: 0.2 });
+        //var materialCubeB = new THREE.MeshPhongMaterial({ color: 0x5c482c,metalness:1,roughness: 0.2 });
         var materialCubeB = new THREE.MeshLambertMaterial({ color: 0x5c482c,metalness:1,roughness: 0.2 });
         var cubeCubeB = new THREE.Mesh(geometryCubeB, materialCubeB);
         cubeCubeB.position.set(0,-4,0); //位置を指定 //y
         cubeCubeB.rotation.set(0,0,0);
         scene.add(cubeCubeB);   // シーンに追加
+        // 箱左部
+        var geometryCubeC = new THREE.BoxGeometry(2, 0.2, 2);
+        //var materialCubeC = new THREE.MeshPhongMaterial({ color: 0x5c482c,metalness:1,roughness: 0.2 });
+        var materialCubeC = new THREE.MeshLambertMaterial({ color: 0x5c482c,metalness:1,roughness: 0.2 });
+        var cubeCubeC = new THREE.Mesh(geometryCubeC, materialCubeC);
+        cubeCubeC.position.set(-4,0,0); //位置を指定 //y
+        cubeCubeC.rotation.set(0,Math.PI/2,0);
+        scene.add(cubeCubeC);   // シーンに追加
         // 振り子の軸を作成
         var geometryFZ = new THREE.CylinderGeometry(0.1, 0.1, 3, 16);
         var materialFZ = new THREE.MeshLambertMaterial({ color: 0x5c482c,metalness:1,roughness: 0.2 });
