@@ -94,7 +94,8 @@
         var geometry = new THREE.CylinderGeometry(1.2, 1.2, 0.05, 64);
         //var material = new THREE.MeshPhongMaterial({ color: 0xdab300,metalness:1,roughness: 0.2 });
         //var material = new THREE.MeshStandardMaterial({ color: 0xdab300,metalness:1,roughness: 0.2 });
-        var material = new THREE.MeshLambertMaterial({ color: 0xdab300,metalness:1,roughness: 0.2 });
+        //var material = new THREE.MeshLambertMaterial({ color: 0xdab300,metalness:1,roughness: 0.2 });
+        var material = new THREE.MeshLambertMaterial({ color: 0x5c482c,metalness:1,roughness: 0.2 });
         var cylinder = new THREE.Mesh(geometry, material);
         cylinder.position.set(0,0,0); //位置を指定
         cylinder.rotation.set(Math.PI/2,0,0);//元々コメント
@@ -103,8 +104,7 @@
         // 文字盤を作成
         var geometryN = new THREE.CylinderGeometry(1, 1, 0.001, 64);
         //var materialN = new THREE.MeshPhongMaterial({ color: 0xffffff,metalness:1,roughness: 0.2 });
-        //var materialN = new THREE.MeshLambertMaterial({ color: 0xffffff,metalness:1,roughness: 0.2 });
-        var materialN = new THREE.MeshLambertMaterial({ color: 0x5c482c,metalness:1,roughness: 0.2 });
+        var materialN = new THREE.MeshLambertMaterial({ color: 0xffffff,metalness:1,roughness: 0.2 });
         var cylinderN = new THREE.Mesh(geometryN, materialN);
         cylinderN.position.set(0,0,0.051); //位置を指定 //y
         cylinderN.rotation.set(Math.PI/2,0,0);
