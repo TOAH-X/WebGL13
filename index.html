@@ -279,9 +279,9 @@
           cylinderFZ.position.x = 0;//z
           cylinderFZ.rotation.z = 0.5*angleInRadiansF;//z
 
-          // 振り子の軸を揺らす
-          cylinderFO.position.y = Math.sin(angleInRadiansF-Math.PI/2);//x
-          cylinderFO.position.x = Math.cos(angleInRadiansF-Math.PI/2);//z
+          // 振り子の錘を揺らす
+          cylinderFO.position.y = 2*Math.sin(angleInRadiansF*0.5-Math.PI/2);//x
+          cylinderFO.position.x = 2*Math.cos(angleInRadiansF*0.5-Math.PI/2);//z
           //cylinderFO.rotation.z = 0.5*angleInRadiansF;//z
           
           //短針の回転
