@@ -132,6 +132,14 @@
         cubeCubeC.position.set(-1.25,-1.25,0); //位置を指定 //y
         cubeCubeC.rotation.set(0,0,Math.PI/2);
         scene.add(cubeCubeC);   // シーンに追加
+        // 箱右部
+        var geometryCubeD = new THREE.BoxGeometry(5.75, 0.2, 1);
+        //var materialCubeD = new THREE.MeshPhongMaterial({ color: 0x5c482c,metalness:1,roughness: 0.2 });
+        var materialCubeD = new THREE.MeshLambertMaterial({ color: 0x5c482c,metalness:1,roughness: 0.2 });
+        var cubeCubeD = new THREE.Mesh(geometryCubeD, materialCubeD);
+        cubeCubeD.position.set(1.25,-1.25,0); //位置を指定 //y
+        cubeCubeD.rotation.set(0,0,Math.PI/2);
+        scene.add(cubeCubeD);   // シーンに追加
         // 振り子の軸を作成
         var geometryFZ = new THREE.CylinderGeometry(0.1, 0.1, 3, 16);
         var materialFZ = new THREE.MeshLambertMaterial({ color: 0x5c482c,metalness:1,roughness: 0.2 });
