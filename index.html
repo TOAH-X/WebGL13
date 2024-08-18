@@ -280,8 +280,8 @@
           cylinderFZ.rotation.z = 0.5*angleInRadiansF;//z
 
           // 振り子の軸を揺らす
-          cylinderFO.position.y = 2*angleInRadiansF;//x
-          cylinderFO.position.x = 2*angleInRadiansF;//z
+          cylinderFO.position.y = Math.sin(angleInRadiansF);//x
+          cylinderFO.position.x = Math.cos(angleInRadiansF);//z
           //cylinderFO.rotation.z = 0.5*angleInRadiansF;//z
           
           //短針の回転
