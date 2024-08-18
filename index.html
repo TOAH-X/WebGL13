@@ -164,7 +164,7 @@
         var materialFO = new THREE.MeshLambertMaterial({ color: 0xff00ff,metalness:1,roughness: 0.2 });
         var cylinderFO = new THREE.Mesh(geometryFO, materialFO);
         cylinderFO.position.set(0,0,0); //位置を指定 //y
-        cylinderFo.rotation.set(Math.PI/2,0,0);
+        cylinderFO.rotation.set(Math.PI/2,0,0);
         scene.add(cylinderFO);   // シーンに追加
         
         // 短針を作成
@@ -280,8 +280,8 @@
           cylinderFZ.rotation.z = 0.5*angleInRadiansF;//z
 
           // 振り子の軸を揺らす
-          cylinderFO.position.y = 1*angleInRadiansF;//x
-          cylinderFO.position.x = 1*angleInRadiansF;//z
+          cylinderFO.position.y = 2*angleInRadiansF;//x
+          cylinderFO.position.x = 2*angleInRadiansF;//z
           //cylinderFO.rotation.z = 0.5*angleInRadiansF;//z
           
           //短針の回転
