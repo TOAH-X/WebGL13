@@ -163,7 +163,7 @@
         //var materialFO = new THREE.MeshPhongMaterial({ color: 0xffffff,metalness:1,roughness: 0.2 });
         var materialFO = new THREE.MeshLambertMaterial({ color: 0xff00ff,metalness:1,roughness: 0.2 });
         var cylinderFO = new THREE.Mesh(geometryFO, materialFO);
-        cylinderFO.position.set(0,0,0); //位置を指定 //y
+        cylinderFO.position.set(0,-1,0); //位置を指定 //y
         cylinderFO.rotation.set(Math.PI/2,0,0);
         scene.add(cylinderFO);   // シーンに追加
         
@@ -280,8 +280,8 @@
           cylinderFZ.rotation.z = 0.5*angleInRadiansF;//z
 
           // 振り子の軸を揺らす
-          cylinderFO.position.y = Math.sin(angleInRadiansF);//x
-          cylinderFO.position.x = Math.cos(angleInRadiansF);//z
+          cylinderFO.position.y = 2*Math.sin(angleInRadiansF+Math.PI/2);//x
+          cylinderFO.position.x = 2*Math.cos(angleInRadiansF+Math.PI/2);//z
           //cylinderFO.rotation.z = 0.5*angleInRadiansF;//z
           
           //短針の回転
