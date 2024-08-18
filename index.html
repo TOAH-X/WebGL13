@@ -158,6 +158,14 @@
         cylinderFZ.position.set(0,-0.5,-0.1); //位置を指定
         cylinderFZ.rotation.set(0,0,0);
         scene.add(cylinderFZ);   // シーンに追加
+        // 振り子の錘
+        var geometryFO = new THREE.CylinderGeometry(0.5, 0.5, 0.15, 64);
+        //var materialFO = new THREE.MeshPhongMaterial({ color: 0xffffff,metalness:1,roughness: 0.2 });
+        var materialFO = new THREE.MeshLambertMaterial({ color: 0xff00ff,metalness:1,roughness: 0.2 });
+        var cylinderFO = new THREE.Mesh(geometryFO, materialFO);
+        cylinderFO.position.set(0,0,0); //位置を指定 //y
+        cylinderFo.rotation.set(Math.PI/2,0,0);
+        scene.add(cylinderFO);   // シーンに追加
         
         // 短針を作成
         var geometryH = new THREE.CylinderGeometry(0.025, 0.025, 0.5, 16);
@@ -270,6 +278,11 @@
           cylinderFZ.position.y = -0.5;//x
           cylinderFZ.position.x = 0;//z
           cylinderFZ.rotation.z = 0.5*angleInRadiansF;//z
+
+          // 振り子の軸を揺らす
+          cylinderFO.position.y = 1*angleInRadiansF;//x
+          cylinderFO.position.x = 1*angleInRadiansF;//z
+          //cylinderFO.rotation.z = 0.5*angleInRadiansF;//z
           
           //短針の回転
           cylinderH.position.y = 0.25*Math.sin(angleInRadians);//x
