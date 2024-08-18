@@ -159,7 +159,7 @@
         cylinderFZ.rotation.set(0,0,0);
         scene.add(cylinderFZ);   // シーンに追加
         // 振り子の錘
-        var geometryFO = new THREE.CylinderGeometry(0.5, 0.5, 0.15, 64);
+        var geometryFO = new THREE.CylinderGeometry(0.4, 0.4, 0.15, 64);
         //var materialFO = new THREE.MeshPhongMaterial({ color: 0xffffff,metalness:1,roughness: 0.2 });
         var materialFO = new THREE.MeshLambertMaterial({ color: 0xff00ff,metalness:1,roughness: 0.2 });
         var cylinderFO = new THREE.Mesh(geometryFO, materialFO);
