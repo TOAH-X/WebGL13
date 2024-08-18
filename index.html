@@ -109,7 +109,7 @@
         cylinderN.rotation.set(Math.PI/2,0,0);
         scene.add(cylinderN);   // シーンに追加
         // 箱上部
-        var geometryCubeA = new THREE.BoxGeometry(2, 0.2, 2);
+        var geometryCubeA = new THREE.BoxGeometry(2.5, 0.2, 2);
         //var materialCubeA = new THREE.MeshPhongMaterial({ color: 0x5c482c,metalness:1,roughness: 0.2 });
         var materialCubeA = new THREE.MeshLambertMaterial({ color: 0x5c482c,metalness:1,roughness: 0.2 });
         var cubeCubeA = new THREE.Mesh(geometryCubeA, materialCubeA);
@@ -117,7 +117,7 @@
         cubeCubeA.rotation.set(0,0,0);
         scene.add(cubeCubeA);   // シーンに追加
         // 箱下部
-        var geometryCubeB = new THREE.BoxGeometry(2, 0.2, 2);
+        var geometryCubeB = new THREE.BoxGeometry(2.5, 0.2, 2);
         //var materialCubeB = new THREE.MeshPhongMaterial({ color: 0x5c482c,metalness:1,roughness: 0.2 });
         var materialCubeB = new THREE.MeshLambertMaterial({ color: 0x5c482c,metalness:1,roughness: 0.2 });
         var cubeCubeB = new THREE.Mesh(geometryCubeB, materialCubeB);
