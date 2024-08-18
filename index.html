@@ -197,34 +197,7 @@
         cylinderS.rotation.set(0,0,Math.PI/2);
         scene.add(cylinderS);   // シーンに追加
 
-        //パーティクル
-        // 形状データを作成
-        const SIZE = 3000;
-        // 配置する個数
-        const LENGTH = 1000;
-        // 頂点情報を格納する配列
-        const vertices = [];
-        for (let i = 0; i < LENGTH; i++) 
-        {
-          const x = SIZE * (Math.random() - 0.5);
-          const y = SIZE * (Math.random() - 0.5);
-          const z = SIZE * (Math.random() - 0.5);
         
-          vertices.push(x, y, z);
-        }
-        // 形状データを作成
-        const geometry = new THREE.BufferGeometry();
-        geometry.setAttribute('position', new THREE.BufferAttribute(new Float32Array(vertices), 3));
-        // マテリアルを作成
-        const material = new THREE.PointsMaterial({
-          // 一つ一つのサイズ
-          size: 10,
-          // 色
-          color: 0xff00ff,
-        });
-        // 物体を作成
-        const mesh = new THREE.Points(geometry, material);
-        scene.add(mesh); // シーンは任意の THREE.Scene インスタンス
         
         
         update();
