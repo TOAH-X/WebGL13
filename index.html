@@ -125,11 +125,11 @@
         cubeCubeB.rotation.set(0,0,0);
         scene.add(cubeCubeB);   // シーンに追加
         // 箱左部
-        var geometryCubeC = new THREE.BoxGeometry(6, 0.2, 2);
+        var geometryCubeC = new THREE.BoxGeometry(5.5, 0.2, 2);
         //var materialCubeC = new THREE.MeshPhongMaterial({ color: 0x5c482c,metalness:1,roughness: 0.2 });
         var materialCubeC = new THREE.MeshLambertMaterial({ color: 0x5c482c,metalness:1,roughness: 0.2 });
         var cubeCubeC = new THREE.Mesh(geometryCubeC, materialCubeC);
-        cubeCubeC.position.set(-2,-1,0); //位置を指定 //y
+        cubeCubeC.position.set(-1,-1.25,0); //位置を指定 //y
         cubeCubeC.rotation.set(0,0,Math.PI/2);
         scene.add(cubeCubeC);   // シーンに追加
         // 振り子の軸を作成
