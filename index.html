@@ -105,18 +105,18 @@
         scene.add(group);
 
         //個々の物体を作成
-        const geometryP = new THREE.BoxGeometry(50, 50, 50);
+        const geometryP = new THREE.BoxGeometry(5, 5, 5);
         const materialP = new THREE.MeshStandardMaterial({color: 0x6699FF,});
 
-        for (let i = 0; i < 1000; i++) {
+        for (let i = 0; i < 10000; i++) {
           const meshP = new THREE.Mesh(geometryP, materialP);
           var randomNumX=0;
           var randomNumY=0;
           var randomNumZ=0;
-          while(randomNumX*randomNumX+randomNumY*randomNumY+randomNumZ*randomNumZ<2){
-            randomNumX=(Math.random()-0.5)*10;
-            randomNumY=(Math.random()-0.5)*10;
-            randomNumZ=(Math.random()-0.5)*10;
+          while(randomNumX*randomNumX+randomNumY*randomNumY+randomNumZ*randomNumZ<1){
+            randomNumX=Math.random()-0.5;
+            randomNumY=Math.random()-0.5;
+            randomNumZ=Math.random()-0.5;
           }
           meshP.position.x = randomNumX * 200;
           meshP.position.y = randomNumY * 200;
