@@ -110,7 +110,11 @@
 
         for (let i = 0; i < 1000; i++) {
           const meshP = new THREE.Mesh(geometryP, materialP);
-          meshP.position.x = (Math.random() - 0.5) * 2000;
+          var randomNumX=0;
+          while(randomNumX<0.2&&randomNumX>-0.2){
+            randomNumX=Math.random()-0.5;
+          }
+          meshP.position.x = randomNumX * 2000;
           meshP.position.y = (Math.random() - 0.5) * 2000;
           meshP.position.z = (Math.random() - 0.5) * 2000;
           meshP.rotation.x = Math.random() * 2 * Math.PI;
