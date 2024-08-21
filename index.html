@@ -113,11 +113,11 @@
           var randomNumX=0;
           var randomNumY=0;
           var randomNumZ=0;
-          //while(randomNumX*randomNumX+randomNumY*randomNumY+randomNumZ*randomNumZ>0){
-          //  randomNumX=(Math.random()-0.5)*10;
-          //  randomNumY=(Math.random()-0.5)*10;
-          //  randomNumZ=(Math.random()-0.5)*10;
-          //}
+          while(randomNumX*randomNumX+randomNumY*randomNumY+randomNumZ*randomNumZ>0){
+            randomNumX=(Math.random()-0.5)*10;
+            randomNumY=(Math.random()-0.5)*10;
+            randomNumZ=(Math.random()-0.5)*10;
+          }
           meshP.position.x = randomNumX * 2000;
           meshP.position.y = randomNumY * 2000;
           meshP.position.z = randomNumZ * 2000;
