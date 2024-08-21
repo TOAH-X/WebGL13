@@ -188,9 +188,9 @@
         // 箱上部
         var geometryCubeA = new THREE.BoxGeometry(2.5, 0.2, 1);
         //var materialCubeA = new THREE.MeshPhongMaterial({ color: 0x5c482c,metalness:1,roughness: 0.2 });
-        //var materialCubeA = new THREE.MeshLambertMaterial({ color: 0x5c482c,metalness:1,roughness: 0.2 });
-        materialCubeA.map = texture0;
+        var materialCubeA = new THREE.MeshLambertMaterial({ color: 0x5c482c,metalness:1,roughness: 0.2 });
         var cubeCubeA = new THREE.Mesh(geometryCubeA, materialCubeA);
+        cubeCubeA.map = texture0;
         cubeCubeA.position.set(0,1.5,0); //位置を指定 //y
         cubeCubeA.rotation.set(0,0,0);
         scene.add(cubeCubeA);   // シーンに追加
