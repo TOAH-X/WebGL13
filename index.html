@@ -91,10 +91,10 @@
         
         
         // helper
-        const gridHelper = new THREE.GridHelper(2,10); // size, step
-        scene.add(gridHelper);
-        const axisHelper = new THREE.AxisHelper(2); //軸の長さ　X：赤、Y：緑、z：青
-        scene.add(axisHelper);
+        //const gridHelper = new THREE.GridHelper(2,10); // size, step
+        //scene.add(gridHelper);
+        //const axisHelper = new THREE.AxisHelper(2); //軸の長さ　X：赤、Y：緑、z：青
+        //scene.add(axisHelper);
 
         // パーティクルの作成
         // フォグの設定
@@ -134,8 +134,6 @@
             randomColorCode=0x5F2879;
           }
           const materialP = new THREE.MeshStandardMaterial({color: randomColorCode,});
-
-
           
           const meshP = new THREE.Mesh(geometryP, materialP);
           var randomNumX=0;
