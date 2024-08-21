@@ -106,9 +106,34 @@
 
         //個々の物体を作成
         const geometryP = new THREE.BoxGeometry(50, 50, 50);
-        const materialP = new THREE.MeshStandardMaterial({color: 0x6699FF,});
+        //const materialP = new THREE.MeshStandardMaterial({color: 0x6699FF,});
 
         for (let i = 0; i < 10000; i++) {
+          var randomNumColor=Math.floor(Math.random()*7);
+          if(randomNumColor==0){
+            const materialP = new THREE.MeshStandardMaterial({color: 0x6699FF,});
+          }
+          else if(randomNumColor==1){
+            const materialP = new THREE.MeshStandardMaterial({color: 0x6699FF,});
+          }
+          else if(randomNumColor==2){
+            const materialP = new THREE.MeshStandardMaterial({color: 0x6699FF,});
+          }
+          else if(randomNumColor==3){
+            const materialP = new THREE.MeshStandardMaterial({color: 0x6699FF,});
+          }
+          else if(randomNumColor==4){
+            const materialP = new THREE.MeshStandardMaterial({color: 0x6699FF,});
+          }
+          else if(randomNumColor==5){
+            const materialP = new THREE.MeshStandardMaterial({color: 0x6699FF,});
+          }
+          else{
+            const materialP = new THREE.MeshStandardMaterial({color: 0x6699FF,});
+          }
+
+
+          
           const meshP = new THREE.Mesh(geometryP, materialP);
           var randomNumX=0;
           var randomNumY=0;
