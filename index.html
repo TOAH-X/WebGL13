@@ -187,42 +187,51 @@
         
         //var materialCubeA = new THREE.MeshLambertMaterial({ color: 0x5c482c,metalness:1,roughness: 0.2 });
         //var cubeCubeA = new THREE.Mesh(geometryCubeA, materialCubeA);
-        var cubeCubeA = new THREE.Mesh(geometry, mat);
+        var cubeCubeA = new THREE.Mesh(geometryCubeA, mat);
         cubeCubeA.position.set(0,1.5,0); //位置を指定 //y
         cubeCubeA.rotation.set(0,0,0);
         scene.add(cubeCubeA);   // シーンに追加
         // 箱下部
         var geometryCubeB = new THREE.BoxGeometry(2.5, 0.2, 1);
         //var materialCubeB = new THREE.MeshPhongMaterial({ color: 0x5c482c,metalness:1,roughness: 0.2 });
-        var materialCubeB = new THREE.MeshLambertMaterial({ color: 0x5c482c,metalness:1,roughness: 0.2 });
-        var cubeCubeB = new THREE.Mesh(geometryCubeB, materialCubeB);
+        
+        //var materialCubeB = new THREE.MeshLambertMaterial({ color: 0x5c482c,metalness:1,roughness: 0.2 });
+        //var cubeCubeB = new THREE.Mesh(geometryCubeB, materialCubeB);
+        var cubeCubeB = new THREE.Mesh(geometryCubeB, mat);
         cubeCubeB.position.set(0,-4,0); //位置を指定 //y
         cubeCubeB.rotation.set(0,0,0);
         scene.add(cubeCubeB);   // シーンに追加
         // 箱左部
         var geometryCubeC = new THREE.BoxGeometry(5.75, 0.2, 1);
         //var materialCubeC = new THREE.MeshPhongMaterial({ color: 0x5c482c,metalness:1,roughness: 0.2 });
-        var materialCubeC = new THREE.MeshLambertMaterial({ color: 0x5c482c,metalness:1,roughness: 0.2 });
-        var cubeCubeC = new THREE.Mesh(geometryCubeC, materialCubeC);
+        
+        //var materialCubeC = new THREE.MeshLambertMaterial({ color: 0x5c482c,metalness:1,roughness: 0.2 });
+        //var cubeCubeC = new THREE.Mesh(geometryCubeC, materialCubeC);
+        var cubeCubeC = new THREE.Mesh(geometryCubeC, mat);
         cubeCubeC.position.set(-1.25,-1.25,0); //位置を指定 //y
         cubeCubeC.rotation.set(0,0,Math.PI/2);
         scene.add(cubeCubeC);   // シーンに追加
         // 箱右部
         var geometryCubeD = new THREE.BoxGeometry(5.75, 0.2, 1);
         //var materialCubeD = new THREE.MeshPhongMaterial({ color: 0x5c482c,metalness:1,roughness: 0.2 });
-        var materialCubeD = new THREE.MeshLambertMaterial({ color: 0x5c482c,metalness:1,roughness: 0.2 });
-        var cubeCubeD = new THREE.Mesh(geometryCubeD, materialCubeD);
+        
+        //var materialCubeD = new THREE.MeshLambertMaterial({ color: 0x5c482c,metalness:1,roughness: 0.2 });
+        //var cubeCubeD = new THREE.Mesh(geometryCubeD, materialCubeD);
+        var cubeCubeD = new THREE.Mesh(geometryCubeD, mat);
         cubeCubeD.position.set(1.25,-1.25,0); //位置を指定 //y
         cubeCubeD.rotation.set(0,0,Math.PI/2);
         scene.add(cubeCubeD);   // シーンに追加
         // 箱後部
         var geometryCubeE = new THREE.BoxGeometry(5.5, 0.2, 2.5);
         //var materialCubeE = new THREE.MeshPhongMaterial({ color: 0x5c482c,metalness:1,roughness: 0.2 });
-        var materialCubeE = new THREE.MeshLambertMaterial({ color: 0x5c482c,metalness:1,roughness: 0.2 });
-        var cubeCubeE = new THREE.Mesh(geometryCubeE, materialCubeE);
+        
+        //var materialCubeE = new THREE.MeshLambertMaterial({ color: 0x5c482c,metalness:1,roughness: 0.2 });
+        //var cubeCubeE = new THREE.Mesh(geometryCubeE, materialCubeE);
+        var cubeCubeE = new THREE.Mesh(geometryCubeE, mat);
         cubeCubeE.position.set(0,-1.25,-0.35); //位置を指定 //y
         cubeCubeE.rotation.set(0,Math.PI/2,Math.PI/2);
         scene.add(cubeCubeE);   // シーンに追加
+        
         // 振り子の軸を作成
         var geometryFZ = new THREE.CylinderGeometry(0.1, 0.1, 3, 16);
         var materialFZ = new THREE.MeshStandardMaterial({ color: 0xdab300,metalness:1,roughness: 0.2 });
