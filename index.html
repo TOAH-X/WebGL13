@@ -110,28 +110,30 @@
 
         for (let i = 0; i < 10000; i++) {
           var randomNumColor=Math.floor(Math.random()*7);
-          const materialP;
+          var randomColorCode;
+          
           if(randomNumColor==0){
-            materialP = new THREE.MeshStandardMaterial({color: 0xF43545,});
+            randomColorCode=0xF43545;
           }
           else if(randomNumColor==1){
-            materialP = new THREE.MeshStandardMaterial({color: 0xFF8901,});
+            randomColorCode=0xFF8901;
           }
           else if(randomNumColor==2){
-            materialP = new THREE.MeshStandardMaterial({color: 0x6699FF,});
+            randomColorCode=0x6699FF;
           }
           else if(randomNumColor==3){
-            materialP = new THREE.MeshStandardMaterial({color: 0x6699FF,});
+            randomColorCode=0xFF8901;
           }
           else if(randomNumColor==4){
-            materialP = new THREE.MeshStandardMaterial({color: 0x6699FF,});
+            randomColorCode=0xFF8901;
           }
           else if(randomNumColor==5){
-            materialP = new THREE.MeshStandardMaterial({color: 0x6699FF,});
+            randomColorCode=0xFF8901;
           }
           else{
-            materialP = new THREE.MeshStandardMaterial({color: 0x6699FF,});
+            randomColorCode=0xFF8901;
           }
+          const materialP = new THREE.MeshStandardMaterial({color: randomColorCode,});
 
 
           
